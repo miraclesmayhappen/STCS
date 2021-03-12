@@ -69,10 +69,14 @@ namespace Wpf_stk1
 					Password_textbox.ToolTip = "Wrong password";
 					Password_textbox.Background = Brushes.DarkSalmon;
 					counter++;
-					if (counter == 3)
+				if (counter == 3)
 					{
 						counter = 0;
-						this.Close();
+						authUser.Privileges = "banned";
+						AppContext db = new AppContext();
+						db.SaveChanges();
+						MessageBox.Show("Failed 3 password entries. Your account is banned. Contact with administrator");
+						System.Windows.Application.Current.Shutdown();
 					}
 					
 				}
