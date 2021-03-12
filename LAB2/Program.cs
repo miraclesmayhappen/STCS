@@ -37,7 +37,8 @@ namespace SystemCheck
 			info += GetSystemMetrics(SM_CYSCREEN).ToString(); //высота экрана
 
 
-			DriveInfo dInfo = new DriveInfo("C");
+			string drive = Environment.GetCommandLineArgs()[0].ElementAt(0).ToString();
+			DriveInfo dInfo = new DriveInfo(drive);
 			info += dInfo.TotalSize.ToString(); //объем памяти
 
 			info += GetKeyboardType(KEYBOARDTYPE).ToString();
