@@ -1,0 +1,56 @@
+﻿<Window x:Class="RGR_wpf.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:RGR_wpf"
+        mc:Ignorable="d"
+        Title="Keyboard auth" Height="341" Width="468">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FFFFA4E2" Offset="1"/>
+                <GradientStop Color="#FF93DDFF" Offset="0.154"/>
+                <GradientStop Color="#FEB0CDF7" Offset="0.352"/>
+                <GradientStop Color="#FEF9F9BC" Offset="0.76"/>
+                <GradientStop Color="#FEA0D5FB" Offset="0.238"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Border Padding="15" VerticalAlignment="Center" HorizontalAlignment="Center" Background="#fcf5f9" CornerRadius="20" Width="350" Height="221">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="50" ShadowDepth="0" Color="DarkGray" ></DropShadowEffect>
+            </Border.Effect>
+
+            
+            
+            <StackPanel VerticalAlignment="Stretch">
+
+                <StackPanel Orientation="Horizontal"  HorizontalAlignment="Center" VerticalAlignment="Center"  >
+                    <RadioButton GroupName="a" Content="a = 0.05" Name="a005" IsChecked="True" Margin="5"/>
+                    <RadioButton GroupName="a" Content="a = 0.01" Name="a001" Margin="5"/>
+                    <RadioButton GroupName="a" Content="a = 0.001" Name="a0001" Margin="5"/>
+                </StackPanel>
+
+
+                <TextBox LostFocus="Login_textbox_LostFocus" Name="Login_textbox" materialDesign:HintAssist.Hint="Enter login" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                <TextBox GotFocus="Password_textbox_GotFocus" KeyDown="Password_textbox_KeyDown" KeyUp="Password_textbox_KeyUp" Name="Password_textbox" materialDesign:HintAssist.Hint="Enter passfrase" Style="{StaticResource  MaterialDesignFloatingHintTextBox}" />
+                <TextBlock x:Name="NoUserAlert" HorizontalAlignment="Center" Foreground="#400023" Margin="0"  />
+                <TextBlock x:Name="TrainigAlert" HorizontalAlignment="Center" Foreground="#400023" Margin="0"  Visibility="Collapsed"/>
+
+                <Button Margin="5" Content="Sign In" x:Name="SignInButton" Click="SignInButton_Click"  Background="#FFAD5C88" Foreground="FloralWhite" BorderBrush="{x:Null}" Cursor="Hand"  />
+                <Button Margin="5" Content="Register" x:Name="RegisterButton" Click="RegisterButton_Click"  Background="#FFAD5C88" Foreground="FloralWhite" BorderBrush="{x:Null}" Cursor="Hand"  />
+
+            </StackPanel>
+        </Border>
+
+
+
+
+
+    </Grid>
+</Window>
